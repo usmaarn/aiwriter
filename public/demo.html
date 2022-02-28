@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="myForm" action="https://www.check-plagiarism.com/apis/checkPlag" method="post">
+        <input type="text" name="key" value="48fb83fa9be9d9b3542a4d4039762fbe"/>
+        <textarea type="text" name="data">Hello</textarea>
+        <button>Submit</button>
+    </form>
+
+    <script>
+
+        let form = document.getElementById('myForm');
+        let formData = new FormData();
+        formData.append("key", form.key.value);
+        formData.append("data", form.data.value);
+
+
+        form.onsubmit = function(e) {
+            e.preventDefault();
+            fetch("https://www.check-plagiarism.com/apis/checkPlag", {
+                method: 'POST',
+                body: new FormData(formData),
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+        }
+
+    </script>
+</body>
+</html>

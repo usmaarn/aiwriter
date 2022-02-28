@@ -1,0 +1,23 @@
+.wrapper{
+  @apply text-gray-100 dark:text-gray-50;
+}
+
+.main{
+  @apply p-3 h-screen;
+}
+
+.mainWrapper {
+  @apply border-t border-gray-700 md:my-5 md:mx-24;
+}
+
+.tabs{
+  @apply flex justify-end my-2 p-1 rounded bg-gradient-to-t from-emerald-600 to-slate-600;
+}
+
+.button{
+  @apply flex font-bold uppercase bg-slate-500 p-2 rounded shadow-2xl mx-1;
+}
+
+.textarea{
+  @apply h-96 p-2 rounded-lg shadow-xl border text-black w-full;
+}
